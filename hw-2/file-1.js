@@ -1,13 +1,10 @@
-function changeLetters(word) {
+function changeLetters(text) {
   let result = '';
-  for (const char of word) {
-    if (char === char.toUpperCase()) {
-      result += char.toLowerCase();
-    } else {
-      result += char.toUpperCase();
-    }
+  for (const char of text) {
+    result += char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
   }
   return result;
 }
 
-changeLetters("Test"); // tEST
+let text = changeLetters("Test");
+console.log(text) // tEST

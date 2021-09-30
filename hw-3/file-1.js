@@ -106,3 +106,6 @@ console.log(result) // [5, 10, 11]
 function printHello() {
   console.log('Hello')
 }
+
+Завдання виконано.
+Є пропущені крапки з комою.

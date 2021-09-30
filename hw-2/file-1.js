@@ -1,6 +1,7 @@
 function changeLetters(text) {
   let result = '';
-  for (const char of text) {
+  
+  for (const char of String(text)) {
     result += char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
   }
   return result;

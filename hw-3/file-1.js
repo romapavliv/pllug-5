@@ -13,7 +13,7 @@ const myArray = [];
 
 
 //Створити пустий масив довжиною 100500 елементів;
-var arr = new Array(10050);
+var arr = new Array(100500);
 console.log(arr.length) // 100500
 
 //Створити масив з декількома елементами;

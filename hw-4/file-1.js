@@ -31,3 +31,4 @@ function filterValues(obj) {
 }
 
 console.log(filterValues({ a: 22, b: -11.35, c: 41.2, d: 'hello' })); // { a: 22, c: 41.2 }
+Завдання виконано, є деякі декларація let які можна було робити через const.

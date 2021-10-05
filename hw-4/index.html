@@ -33,11 +33,8 @@
 
     <!-- 4) Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку. -->
     <script>
-      console.log(navigator.appCodeName + ' - ' + navigator.platform);
-      if (navigator.userAgent.indexOf('Chrome') >= 0) {
-        console.log('Browser is Chrome');
-      }
-      console.log();
+      if (navigator.userAgent.indexOf('Chrome') >= 0) console.log('Your browser is Chrome.');
+      if (navigator.appVersion.indexOf('Mac') >= 0) console.log('Your system is MacOS.');
     </script>
 
     <!-- 5) Скрипт який змушує браузер показувати сповіщення, коли ви намагаєтесь перезавантажити сторінку, видалити вкладку, чи вимкнути браузер. -->

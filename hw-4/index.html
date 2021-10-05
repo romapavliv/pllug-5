@@ -24,10 +24,10 @@
 
     <!-- 3) Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
     <script>
-      window.onbeforeunload = function () {
-        const date = new Date();
-        console.log('Close or reload page' + date.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
-      };
+      window.addEventListener('beforeunload', (event) => {
+        console.log('Close or reload page' + new Date().toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+      });
+      
     </script>
 
     <!-- 4) Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку. -->

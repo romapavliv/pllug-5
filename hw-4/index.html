@@ -25,9 +25,8 @@
     <!-- 3) Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
     <script>
       window.addEventListener('beforeunload', (event) => {
-        console.log('Close or reload page' + new Date().toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+        console.log('Close or reload page: ' + new Date().toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
       });
-      
     </script>
 
     <!-- 4) Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку. -->
@@ -41,9 +40,10 @@
 
     <!-- 5) Скрипт який змушує браузер показувати сповіщення, коли ви намагаєтесь перезавантажити сторінку, видалити вкладку, чи вимкнути браузер. -->
     <script>
-      window.onbeforeunload = function () {
-        return false;
-      };
+      window.addEventListener('beforeunload', (event) => {
+        event.preventDefault();
+        event.returnValue = 'close';
+      });
     </script>
 
     <!-- 6) Скрипт який виводить в консоль скільки секунд юзер перебував на сторінці, після того як юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
@@ -55,7 +55,7 @@
 
       window.onbeforeunload = function () {
         end = new Date();
-        return console.log((start.getTime() - end.getTime()) / 1000);
+        return console.log(((end.getTime() - start.getTime()) / 1000).toFixed(0) + ' seconds');
       };
     </script>
   </body>

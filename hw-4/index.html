@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1) Скрипт, який виводить в консоль дату і час, коли DOM побудований, але css, зображення ще не завантажились. -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const date = new Date();
+        console.log('Dom complete at: ' + date.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+      });
+    </script>
+    <!-- 2) Скрипт, який виводить в консоль дату і час, коли DOM побудований 
+            і css, зображення вже завантажились. -->
+    <script>
+      window.onload = function () {
+        const date = new Date();
+        console.log('Dom, css, pics complete at: ' + date.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+      };
+    </script>
+
+    <!-- 3) Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
+    <script>
+      window.onbeforeunload = function () {
+        const date = new Date();
+        console.log('Close or reload page' + date.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+      };
+    </script>
+
+    <!-- 4) Скрипт який виводить повертає назву браузера та назву операційної системи через дефіс "-" як одну строку. -->
+    <script>
+      console.log(navigator.appCodeName + ' - ' + navigator.platform);
+      if (navigator.userAgent.indexOf('Chrome') >= 0) {
+        console.log('Browser is Chrome');
+      }
+      console.log();
+    </script>
+
+    <!-- 5) Скрипт який змушує браузер показувати сповіщення, коли ви намагаєтесь перезавантажити сторінку, видалити вкладку, чи вимкнути браузер. -->
+    <script>
+      window.onbeforeunload = function () {
+        return false;
+      };
+    </script>
+
+    <!-- 6) Скрипт який виводить в консоль скільки секунд юзер перебував на сторінці, після того як юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
+
+    <script>
+      window.onload = function () {
+        start = new Date();
+      };
+
+      window.onbeforeunload = function () {
+        end = new Date();
+        return console.log((start.getTime() - end.getTime()) / 1000);
+      };
+    </script>
+  </body>
+</html>

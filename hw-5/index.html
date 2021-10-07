@@ -53,21 +53,25 @@
         document.querySelectorAll('.pet').forEach((el) => (el.classList.length === 1 ? el.remove() : undefined));
       }
 
+      //removeClassPet();
+
       //   Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий
       // елемент є першим
 
       function addElementBeforeBirdsList() {
         let element = document.createElement('li');
         element.innerText = 'Stork';
-        document.getElementById('birds').insertBefore(element, document.getElementById('birds').firstChild);
+        document.getElementById('birds').prepend(element);
       }
+
+      //addElementBeforeBirdsList();
 
       //   Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий
       // елемент є останнім
 
       function addLastElementToBirdsList() {
         let newElement = document.createElement('li');
-        newElement.innerText = 'Eagle';
+        newElement.innerText = 'Hummingbird';
         document.getElementById('birds').appendChild(newElement);
       }
 

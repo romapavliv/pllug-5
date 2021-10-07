@@ -8,7 +8,7 @@
       <ul id="animals">
         <li class="pet">Dog</li>
         <li id="cat" class="pet">Cat</li>
-        <li class="wild">Elephant</li>
+        <li class="wild dangerous">Elephant</li>
         <li class="wild">Whale</li>
         <li class="wild">Horse</li>
         <li class="wild dangerous">Tiger</li>
@@ -28,19 +28,23 @@
 
       //   Функція яка видаляє всі класи останнього елемента списку animals
       function removeAllAnimalClasses() {
-        document.getElementById('animals').lastElementChild.removeAttribute('class');
+        document.querySelector('#animals').lastElementChild.removeAttribute('class');
       }
+      //removeAllAnimalClasses();
 
       //   Функція яка змінює background-color наступного елемента після елемента з id="cat"
-      function changeBackgroundColor() {
-        document.querySelector('#cat').nextElementSibling.style.backgroundColor = 'red';
+      function changeBackground(color) {
+        document.querySelector('#cat').nextElementSibling.style.backgroundColor = `${color}`;
       }
+      //changeBackground('Gold');
 
       //   Функція яка змінює колір тексту на червоний всім елементам які мають клас dangerous
 
-      function changeColor() {
-        document.querySelectorAll('.dangerous').forEach((el) => (el.style.color = 'red'));
+      function changeColor(color = 'red') {
+        document.querySelectorAll('.dangerous').forEach((el) => (el.style.color = `${color}`));
       }
+
+      //changeColor();
 
       //   Функція яка видаляє всі елементи які мають клас pet, але якщо крім класу pet є ще інші класи, то вони
       // повинні залишитись

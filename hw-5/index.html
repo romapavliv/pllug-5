@@ -1,10 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Homework</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <ul id="animals">
+        <li class="pet">Dog</li>
+        <li id="cat" class="pet">Cat</li>
+        <li class="wild">Elephant</li>
+        <li class="wild">Whale</li>
+        <li class="wild">Horse</li>
+        <li class="wild dangerous">Tiger</li>
+      </ul>
+      <ul id="birds">
+        <li class="wild">Eagle</li>
+        <li class="wild">Sparrow</li>
+        <li class="pet wild">Parrot</li>
+      </ul>
+    </div>
+    <script>
+      //   Функція яка збільшує розмір шрифту всіх елементів списку animals
+      function increaseAnimalsFont() {
+        document.getElementById('animals').style.fontSize = '24pt';
+      }
+
+      //   Функція яка видаляє всі класи останнього елемента списку animals
+      function removeAllAnimalClasses() {
+        document.getElementById('animals').lastElementChild.removeAttribute('class');
+      }
+
+      //   Функція яка змінює background-color наступного елемента після елемента з id="cat"
+      function changeBackgroundColor() {
+        document.querySelector('#cat').nextElementSibling.style.backgroundColor = 'red';
+      }
+
+      //   Функція яка змінює колір тексту на червоний всім елементам які мають клас dangerous
+
+      function changeColor() {
+        document.querySelectorAll('.dangerous').forEach((el) => (el.style.color = 'red'));
+      }
+
+      //   Функція яка видаляє всі елементи які мають клас pet, але якщо крім класу pet є ще інші класи, то вони
+      // повинні залишитись
+
+      function removeClassPet() {
+        document.querySelectorAll('.pet').forEach((el) => (el.classList.length === 1 ? el.remove() : undefined));
+      }
+
+      //   Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий
+      // елемент є першим
+
+      function addElementBeforeBirdsList() {
+        let element = document.createElement('li');
+        element.innerText = 'Stork';
+        document.getElementById('birds').insertBefore(element, document.getElementById('birds').firstChild);
+      }
+
+      //   Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий
+      // елемент є останнім
+
+      function addLastElementToBirdsList() {
+        let newElement = document.createElement('li');
+        newElement.innerText = 'Eagle';
+        document.getElementById('birds').appendChild(newElement);
+      }
+
+      //   Функція яка додає додає новий список id="fish" перед списком birds
+
+      function addListBeforeBirdsList() {
+        let list = document.createElement('ul');
+        list.setAttribute('id', 'fish');
+        document.getElementById('birds').parentElement.insertBefore(list, document.getElementById('birds'));
+      }
+
+      //   Функція яка змінює порядок елементів в списку animals - останній елемент стає першим, передостанній -
+      // другим, і т.д.
+
+      function changeOrder() {
+        for (let i = 0; i < animals.childElementCount; i++) {
+          animals.prepend(animals.children[i]);
+        }
+      }
+
+      //   Функція яка перетворює класи елементів списку animals і додає до цих елементів data-* атрибути з назвою
+      // класу який був прибраний. Наприклад: <li class="wild dangerous">Tiger</li> => <li data-wild data-dangerous>Tiger</li>
+
+      function addDataAttributes() {
+        document
+          .getElementById('animals')
+          .querySelectorAll('li')
+          .forEach((element) => {
+            element.classList.forEach((name) => element.setAttribute('data-' + name, ''));
+            element.removeAttribute('class');
+          });
+      }
+    </script>
+  </body>
 </html>

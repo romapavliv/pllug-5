@@ -21,9 +21,10 @@
     </div>
     <script>
       //   Функція яка збільшує розмір шрифту всіх елементів списку animals
-      function increaseAnimalsFont() {
-        document.getElementById('animals').style.fontSize = '24pt';
+      function increaseAnimalsFont(size) {
+        document.querySelector('#animals').style.fontSize = `${size}px`;
       }
+      //increaseAnimalsFont(44);
 
       //   Функція яка видаляє всі класи останнього елемента списку animals
       function removeAllAnimalClasses() {

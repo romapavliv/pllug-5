@@ -55,33 +55,37 @@
 
       //removeClassPet();
 
-      //   Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий
+      //   Функція яка додає новий елемент в список birds - після цього це має бути список у якому новий
       // елемент є першим
 
       function addElementBeforeBirdsList() {
         let element = document.createElement('li');
         element.innerText = 'Stork';
-        document.getElementById('birds').prepend(element);
+        document.querySelector('#birds').prepend(element);
       }
 
       //addElementBeforeBirdsList();
 
-      //   Функція яка додає додає новий елемент в список birds - після цього це має бути список у якому новий
+      //   Функція яка додає новий елемент в список birds - після цього це має бути список у якому новий
       // елемент є останнім
 
       function addLastElementToBirdsList() {
         let newElement = document.createElement('li');
         newElement.innerText = 'Hummingbird';
-        document.getElementById('birds').appendChild(newElement);
+        document.querySelector('#birds').append(newElement);
       }
 
-      //   Функція яка додає додає новий список id="fish" перед списком birds
+      //addLastElementToBirdsList();
+
+      //   Функція яка додає новий список id="fish" перед списком birds
 
       function addListBeforeBirdsList() {
         let list = document.createElement('ul');
         list.setAttribute('id', 'fish');
-        document.getElementById('birds').parentElement.insertBefore(list, document.getElementById('birds'));
+        document.getElementById('birds').before(list);
       }
+
+      //addListBeforeBirdsList();
 
       //   Функція яка змінює порядок елементів в списку animals - останній елемент стає першим, передостанній -
       // другим, і т.д.

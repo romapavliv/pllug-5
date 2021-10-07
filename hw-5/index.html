@@ -82,7 +82,7 @@
       function addListBeforeBirdsList() {
         let list = document.createElement('ul');
         list.setAttribute('id', 'fish');
-        document.getElementById('birds').before(list);
+        document.querySelector('#birds').before(list);
       }
 
       //addListBeforeBirdsList();
@@ -96,18 +96,22 @@
         }
       }
 
+      //changeOrder();
+
       //   Функція яка перетворює класи елементів списку animals і додає до цих елементів data-* атрибути з назвою
       // класу який був прибраний. Наприклад: <li class="wild dangerous">Tiger</li> => <li data-wild data-dangerous>Tiger</li>
 
       function addDataAttributes() {
         document
-          .getElementById('animals')
+          .querySelector('#animals')
           .querySelectorAll('li')
           .forEach((element) => {
-            element.classList.forEach((name) => element.setAttribute('data-' + name, ''));
+            element.classList.forEach((attr) => element.setAttribute('data-' + attr, ''));
             element.removeAttribute('class');
           });
       }
+
+      //addDataAttributes();
     </script>
   </body>
 </html>

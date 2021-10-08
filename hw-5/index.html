@@ -105,9 +105,9 @@
         document
           .querySelector('#animals')
           .querySelectorAll('li')
-          .forEach((element) => {
-            element.classList.forEach((attr) => element.setAttribute('data-' + attr, ''));
-            element.removeAttribute('class');
+          .forEach((el) => {
+            el.classList.forEach((attr) => (el.dataset[attr] = ''));
+            el.removeAttribute('class');
           });
       }
 

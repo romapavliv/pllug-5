@@ -17,9 +17,13 @@
     <!-- 2) Скрипт, який виводить в консоль дату і час, коли DOM побудований 
             і css, зображення вже завантажились. -->
     <script>
-      window.addEventListener('load', (event) => {
-        console.log('Page is fully loaded:', new Date().toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
-      });
+      window.onload = function () {
+        const date = new Date();
+        console.log('Page is fully loaded onload: ' + date.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+      };
+      // window.addEventListener('load', (event) => {
+      //   console.log('Page is fully loaded:', new Date().toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'long' }));
+      // });
     </script>
 
     <!-- 3) Скрипт який виводить в консоль дату і час коли юзер натиснув на закрити вкладку або перезавантажити сторінку. -->

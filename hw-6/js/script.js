@@ -57,3 +57,5 @@ function addComment() {
   li.innerHTML = `<p>${nick.value} - ${name.value}<br />${text.value}</p>`;
   list.prepend(li);
 }
+
+Завдання виконано.

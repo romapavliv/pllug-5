@@ -8,7 +8,7 @@
     <title>Form</title>
   </head>
   <body>
-    <form id="form">
+    <form id="form" action="javascript:addComment()">
       <div>
         <label for="nick">Nickname:</label>
         <input id="nick" type="text" name="nick" data-save onkeydown="return /[a-zA-Z0-9]/.test(event.key)" />

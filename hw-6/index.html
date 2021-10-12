@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
     <title>Form</title>
   </head>
-  <body></body>
+  <body>
+    <form id="form">
+      <div>
+        <label for="nick">Nickname:</label>
+        <input id="nick" type="text" name="nick" data-save onkeydown="return /[a-zA-Z0-9]/.test(event.key)" />
+      </div>
+
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" data-save />
+      </div>
+
+      <div>
+        <label for="comment">Comment:</label>
+        <textarea id="text" name="comment" data-save></textarea>
+      </div>
+
+      <div>
+        <button id="button" type="submit">Add comment</button>
+      </div>
+    </form>
+    <script src="js/script.js"></script>
+  </body>
 </html>

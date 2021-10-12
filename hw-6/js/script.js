@@ -15,8 +15,8 @@ function checkButton() {
   }
 }
 
-name.addEventListener('input', (element) => {
-  if (element.target.value.length < 1 || element.target.value.length > 100 || !element.target.value.match('^[a-zA-Z]+$')) {
+name.addEventListener('input', (el) => {
+  if (!/[a-zA-Z]{1,100}/.test(el.target.value)) {
     name.style.border = '1px solid red';
     isNameCorrect = false;
     button.disabled = true;
@@ -27,8 +27,8 @@ name.addEventListener('input', (element) => {
   }
 });
 
-nick.addEventListener('input', (element) => {
-  if (element.target.value.length < 3 || element.target.value.length > 24 || !/[a-zA-Z]/.test(element.target.value)) {
+nick.addEventListener('input', (el) => {
+  if (!/[a-zA-Z]{3,24}/.test(el.target.value)) {
     nick.style.border = '1px solid red';
     isNickCorrect = false;
     button.disabled = true;
@@ -39,8 +39,8 @@ nick.addEventListener('input', (element) => {
   }
 });
 
-text.addEventListener('input', (element) => {
-  if (element.target.value.length < 1 || element.target.value.length > 1000 || !element.target.value.match('^[a-zA-Z .,!?]+$')) {
+text.addEventListener('input', (el) => {
+  if (!/[a-zA-Z .,!?]{1,1000}/.test(el.target.value)) {
     text.style.border = '1px solid red';
     isTextCorrect = false;
     button.disabled = true;

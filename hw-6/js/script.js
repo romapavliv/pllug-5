@@ -52,10 +52,8 @@ text.addEventListener('input', (element) => {
 });
 
 function addComment() {
-  let form = document.getElementById('form');
-  let ul = document.createElement('ul');
-  form.appendChild(ul);
+  let list = document.getElementById('list');
   let li = document.createElement('li');
   li.innerHTML = `<p>${nick.value} - ${name.value}<br />${text.value}</p>`;
-  ul.appendChild(li);
+  list.prepend(li);
 }

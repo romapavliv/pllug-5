@@ -117,3 +117,5 @@ function convertObject(obj) {
 function convertMap(map) {
   return Object.fromEntries(map.entries());
 }
+
+Завдання виконано.

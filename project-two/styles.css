@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.titles {
+  margin-top: 30px;
+  line-height: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: 415px;
+  width: 415px;
+  gap: 5px;
+}
+
+.card {
+  background-color: chocolate;
+  height: 100px;
+  width: 100px;
+  font-size: 80px;
+  text-align: center;
+}

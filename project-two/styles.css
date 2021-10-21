@@ -6,6 +6,7 @@
 }
 
 .titles {
+  display: none;
   margin-top: 30px;
   line-height: 30px;
   padding: 20px;
@@ -27,4 +28,44 @@
   width: 100px;
   font-size: 80px;
   text-align: center;
+}
+
+.start {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.start h3 {
+  font-size: 45px;
+  color: darkslateblue;
+}
+
+button {
+  margin: 16px;
+  padding: 16px;
+  background-color: darkslateblue;
+  color: aliceblue;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+input {
+  padding: 5px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid darkblue;
+}
+
+input:focus {
+  font-weight: bold;
+  color: chocolate;
+}
+
+input {
+  caret-color: red;
 }

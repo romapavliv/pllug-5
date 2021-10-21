@@ -7,9 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
   const resultDisplay = document.querySelector('#result');
   const totalMoves = document.querySelector('#move');
+  let startBtn = document.getElementById('start');
+  let name = '';
   let cardsChosen = [];
   let cardsChosenId = [];
   let cardsWon = [];
+
+  startBtn.addEventListener('click', function () {
+    name = document.getElementById('name').value;
+    document.querySelector('.titles').style.display = 'block';
+    document.querySelector('.start').style.display = 'none';
+    console.log(name);
+    createBoard();
+  });
 
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -54,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cardsWon.length === cardArray.length / 2) {
       resultDisplay.textContent = 'Congratulations! You found them all!';
     }
+    let message = `'Congratulations! You found them all!' using ${moves} moves and spent `;
   }
 
   function flipCard() {
@@ -66,5 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(checkForMatch, 500);
     }
   }
-  createBoard();
 });

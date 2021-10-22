@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardsChosen = [];
   let cardsChosenId = [];
   let cardsWon = [];
+  let timerInterval = null;
+  let value = 0;
 
   startBtn.addEventListener('click', function () {
     name = document.getElementById('name').value;
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.start').style.display = 'none';
     console.log(name);
     createBoard();
+    start();
   });
 
   function createBoard() {
@@ -63,8 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     resultDisplay.textContent = ` ${cardsWon.length}`;
     if (cardsWon.length === cardArray.length / 2) {
       resultDisplay.textContent = 'Congratulations! You found them all!';
+      stop();
+
+      let message = `Congratulations! You found them all! Here are the results: 
+    \nMoves: ${moves} 
+    \nScore: ${cardsWon.length}
+    \nTime: ${value} sec`;
+      alert(message);
     }
-    let message = `'Congratulations! You found them all!' using ${moves} moves and spent `;
   }
 
   function flipCard() {
@@ -76,5 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cardsChosen.length === 2) {
       setTimeout(checkForMatch, 500);
     }
+  }
+
+  function changeValue() {
+    document.getElementById('sec').innerHTML = ++value;
+  }
+
+  var stop = function () {
+    clearInterval(timerInterval);
+  };
+
+  function start() {
+    stop();
+    value = 0;
+    timerInterval = setInterval(changeValue, 1000);
   }
 });

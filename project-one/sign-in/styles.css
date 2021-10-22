@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title {
+  margin: 6%;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.title h1::first-letter {
+  color: #e2222d;
+}
+
+.left-block {
+  flex: 50%;
+  color: white;
+  background: no-repeat center url('Mask Group 43.png');
+  background-size: cover;
+}
+
+.right-block {
+  flex: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsChosenId = [];
     resultDisplay.textContent = ` ${cardsWon.length}`;
     if (cardsWon.length === cardArray.length / 2) {
-      resultDisplay.textContent = 'Congratulations! You found them all!';
+      resultDisplay.textContent = ' Congratulations! You found them all!';
       stop();
 
-      let message = `Congratulations! You found them all! Here are the results: 
+      let message = `Congratulations! Here are the results: 
     \nMoves: ${moves} 
     \nScore: ${cardsWon.length}
     \nTime: ${value} sec`;

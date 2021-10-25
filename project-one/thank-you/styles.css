@@ -63,7 +63,7 @@ h1 {
   flex: 50%;
   background-color: white;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -79,3 +79,28 @@ h1 {
   border: none;
   cursor: pointer;
 }
+
+.message {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8d8da5;
+}
+.message span {
+  text-decoration: underline;
+}
+
+#email {
+  padding-top: 24px;
+  text-align: right;
+  color: black;
+}
+
+.send-email {
+  display: flex;
+  flex-direction: column;
+  width: 442px;
+  margin: auto;
+  padding: 20px;
+}
+
+

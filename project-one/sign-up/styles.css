@@ -38,6 +38,7 @@ h1 {
   color: white;
   text-decoration: none;
   display: block;
+
 }
 
 .form-title {
@@ -45,7 +46,7 @@ h1 {
   font-size: 36px;
   font-weight: 400;
   color: #8d8da5;
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .title-logo::first-letter {
@@ -78,4 +79,54 @@ h1 {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  margin-bottom: 25px;
+}
+
+#email,
+#password,
+#confirm_password {
+  height: 50px;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #dbdfeb;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+#confirm_password {
+  margin-bottom: 0;
+}
+
+#email::placeholder, #password::placeholder, #confirm_password::placeholder {
+  font-size: 13px;
+  padding: 16px;
+  color: #8d8da5;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.sign-up-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 442px;
+  padding: 20px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #181C32;
+  display: block;
 }

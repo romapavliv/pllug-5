@@ -130,3 +130,59 @@ body {
   color: #181C32;
   display: block;
 }
+
+@media (max-width: 1199px) {
+  .about h1 {
+    font-size: 22px;
+    margin-top: 66px;
+  }
+
+  .logo {
+    font-size: 40px;
+  }
+
+  .title-logo {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .form-title {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+  .container {
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-title {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+  .container {
+    height: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .form-title {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .text {
+    padding: 30px;
+  }
+
+  .container {
+    height: auto;
+  }
+}

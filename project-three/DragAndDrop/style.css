@@ -1,51 +1,137 @@
-#drag-n-drop-container {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  width: 500px;
-  font-family: sans-serif;
-  margin: 100px auto;
-  padding: 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.button {
-  display: inline-block;
-  padding: 10px;
-  background-color: #cccccc;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.preview-container {
-  height: 200px;
-}
-
-.thumbnail {
-  height: 100px;
-  width: 100px;
+body {
+    background-color: #666;
+    font-family: 'Roboto', sans-serif;
 }
 
 #drag-n-drop-container {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  width: 500px;
-  font-family: sans-serif;
-  margin: 100px auto;
-  padding: 20px;
+    border: 2px dashed blue;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    font-size: 24px;
+    color: black;
+    box-shadow: 0 0 10px 5px;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px;
-  background-color: #cccccc;
-  border-radius: 5px;
-  cursor: pointer;
+.btn {
+    color: #42b983;
+    position: relative;
+    border-radius: 99px;
+    border: 1px solid #42b983;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    outline: none;
+    background: #fff;
+    transition: all 0.22s;
+    cursor: pointer;
+    margin-right: 1rem;
 }
+
+.btn:active {
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+input[type=file] {
+    display: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
 
 .preview-container {
-  height: 200px;
+    height: 200px;
 }
 
 .thumbnail {
-  height: 100px;
-  width: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    background-color: #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.preview-container {
+    height: 200px;
+}
+
+.thumbnail {
+    height: 100px;
+    width: 100px;
+}
+
+.preview {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+}
+
+.preview-image {
+    position: relative;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+    overflow: hidden;
+}
+
+.preview-image img {
+    width: 90px;
+    height: auto;
+}
+
+.preview-remove {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+    background: rgba(255, 255, 255, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity .22s;
+}
+
+.preview-image:hover .preview-remove {
+    opacity: 1;
+}
+
+.preview-image:hover .preview-info {
+    bottom: 4px;
+}
+
+.preview-info {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    left: 0;
+    height: 24px;
+    font-size: .8rem;
+    background: rgba(255, 255, 255, .5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    transition: bottom .22s;
+}
+
+.preview-image.removing {
+    transform: scale(0);
+    transition: transform .3s;
 }

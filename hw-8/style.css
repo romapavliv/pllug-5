@@ -131,6 +131,10 @@ h1 {
     background-position: center;
 }
 
+.todo__action_complete {
+    background-color: #66bb6a;
+}
+
 .todo__action_delete {
     right: 52px;
     background-color: #e57373;
@@ -158,6 +162,12 @@ h1 {
 
 .todo__item:hover .todo__action:hover {
     opacity: 1;
+}
+
+[data-todo-option="active"] .todo__item:not([data-todo-state="active"]),
+[data-todo-option="completed"] .todo__item:not([data-todo-state="completed"]),
+[data-todo-option="deleted"] .todo__item:not([data-todo-state="deleted"]) {
+    display: none;
 }
 
 
